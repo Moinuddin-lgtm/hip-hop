@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <!-- link for favicon  -->
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+    <!-- link for style  -->
+    <link rel="stylesheet" href="src/style.css">
+    <!-- link for font awesome  -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="music-container">
+            <audio src="audio/social.mp3" id="audio"></audio>
+            <div class="cover">
+                <img src="images/button.jpg" alt="filp" >
+            </div>
+            <div class="option-wrapper">
+                <div class="music-info">
+                    <h4 id="title">Deshehara</h4>
+                  
+                    <div class="progressbar">
+                        <div class="progress"></div>
+                    </div>
+                </div>
+                <div class="music-options">
+                
+                    <div class="blink">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="option-group">
+                        <button id="prev"><i class="fa fa-backward"></i></button>
+                        <button id="play"><i class="fa fa-play"></i></button>
+                        <button id="next"><i class="fa fa-forward"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="src/app.js"></script>
+
+</body>
+
+</html>

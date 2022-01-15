@@ -1,0 +1,183 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    background: #303f8e;
+    user-select: none;
+    -moz-context-properties: none;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.music-container {
+    width: 310px;
+    height: auto;
+    background: #fff;
+    position: relative;
+}
+
+.cover {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: absolute;
+    left: -7px;
+    top: -33px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    animation: rotate 2s linear infinite;
+    animation-play-state: paused;
+}
+.cover::after{
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-radius: 50%;
+  z-index: 5;
+  position: absolute;
+  left: 51%;
+  top: 40%;
+  transform: translate(-50%, 51%);
+  box-shadow: 0rem 0rem 3rem rgba(0, 0, 0, 0.2);
+}
+.play .cover{
+    animation-play-state: running;
+}
+@keyframes rotate{
+   0%{
+       transform: rotate(0deg);
+   }
+   100%{
+       transform: rotate(360deg);
+   }
+}
+.cover img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+}
+.option-wrapper {
+    width: 80%;
+    margin-left: auto;
+    padding: 1rem;
+}
+
+.music-options {
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
+
+.music-options button {
+    background: #eee;
+    border: none;
+    padding: .5rem;
+    color: #9a9a9a;
+    cursor: pointer;
+    user-select: none;
+    margin: 0rem 0.1rem;
+    outline: none;
+    border-radius: 50%;
+}
+.music-options button:nth-child(2){
+    padding: .7rem;
+}
+.music-info {
+    margin: 1rem 0rem;
+    position: absolute;
+    top: -50%;
+    background: #fff;
+    width: 74%;
+    padding: .5rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+.play .music-info{
+    top: -103%;
+    opacity: 1;
+    pointer-events: all;
+}
+
+.progressbar {
+    width: 100%;
+    height: 2px;
+    background: #eee;
+    margin-top: 0.5rem;
+    border-radius: 50px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.progress {
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background: #ff5722;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.serial {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+.blink{
+    position: absolute;
+    right: 0px;
+}
+.blink span{
+    width: 5px;
+    height: 5px;
+    background: rgb(150, 150, 150);
+    display: block;
+    border-radius: 50%;
+    margin-bottom: .3rem;
+    animation: blink 1s step-start infinite;
+    animation-play-state: paused;
+     transform: scale(1);
+
+}
+.play .blink span{
+    animation-play-state: running !important;
+}
+.blink span:nth-child(1){
+    animation-delay: 0.5s;
+}
+.blink span:nth-child(2) {
+    animation-delay: 0.8s;
+}
+.blink span:nth-child(3) {
+    animation-delay: 1.1s;
+}
+.blink span:nth-child(4) {
+    animation-delay: 1.4s;
+}
+@keyframes blink{
+    0%{
+        transform: scale(1);
+
+    }50%{
+        transform: scale(1.1);
+        background: rgb(240, 136, 0);
+
+    }
+    100% {
+        background: rgb(255, 0, 0);
+
+        transform: scale(2);
+    }
+}
